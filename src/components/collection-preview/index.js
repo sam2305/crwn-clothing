@@ -1,0 +1,1 @@
+export { default as CollectionPreview } from './collection-preview.component';
