@@ -1,0 +1,1 @@
+export { default as FormInput} from './custom-input.component';
