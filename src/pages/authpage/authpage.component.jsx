@@ -1,9 +1,10 @@
 import './authpage.styles.scss';
-import { SignIn } from '../../components';
+import { SignIn, SignUp } from '../../components';
 
 const AuthPage = () => (
     <div className='sign-in-and-sign-up'> 
         <SignIn /> 
+        <SignUp />
     </div>
 )
 
