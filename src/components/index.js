@@ -8,3 +8,5 @@ export * from './custom-button';
 export * from './custom-input';
 export * from './signin';
 export * from './signup';
+export * from './cart-icon';
+export * from './cart-dropdown';
