@@ -11,3 +11,4 @@ export * from './signup';
 export * from './cart-icon';
 export * from './cart-dropdown';
 export * from './cart-item';
+export * from './checkout-item';
