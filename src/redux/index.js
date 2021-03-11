@@ -1,4 +1,6 @@
 export * from './user';
 export * from './cart';
-export * from './root-reducer';
-export { default as store} from './store';
+export * from './directory';
+export * from './directory';
+export * from './shop';
+export { default as ReduxStore} from './store';
