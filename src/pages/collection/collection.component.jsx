@@ -1,4 +1,4 @@
-import './collection.styles.scss';
+import { CollectionPageContainer, CollectionPageItemsContainer, CollectionPageTitleContainer } from './collection.styles';
 import { connect } from 'react-redux';
 import { selectCollection } from '../../redux';
 import { CollectionItem } from '../../components';
@@ -6,14 +6,14 @@ import { CollectionItem } from '../../components';
 const CollectionPage = ({collection })=> {
     const { title, items } = collection
     return (
-        <div className='collection-page'>
-            <h2 className='title'>{title}</h2>
-            <div className='items'>
+        <CollectionPageContainer>
+            <CollectionPageTitleContainer>{title}</CollectionPageTitleContainer>
+            <CollectionPageItemsContainer>
                 {
                     items.map( item => <CollectionItem key={item.id} item={item}/>)
                 }
-            </div>
-        </div>
+            </CollectionPageItemsContainer>
+        </CollectionPageContainer>
     )
 }
 

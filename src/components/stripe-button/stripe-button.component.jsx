@@ -1,4 +1,3 @@
-import './stripe-button.styles.scss';
 import StripeCheckout from 'react-stripe-checkout';
 
 

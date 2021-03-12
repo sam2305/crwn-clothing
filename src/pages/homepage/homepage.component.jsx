@@ -1,9 +1,9 @@
-import './homepage.styles.scss';
+import { HomePageContainer } from './homepage.styles';
 import {Directory} from '../../components';
 
 
 export const HomePage = () => (
-    <div className='HomePage'>
+    <HomePageContainer>
         <Directory />
-    </div>
+    </HomePageContainer>
 );
