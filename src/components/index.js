@@ -13,3 +13,4 @@ export * from './cart-dropdown';
 export * from './cart-item';
 export * from './checkout-item';
 export * from './collections-overview';
+export * from './stripe-button';
