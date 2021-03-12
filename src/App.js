@@ -10,7 +10,6 @@ import { createStructuredSelector } from 'reselect';
 class App extends Component {
   
   unsubscribeFromAuth = null;
-  unsubscribeFromSnapshot = null;
 
   componentDidMount() {
     const { setCurrentUser } = this.props;
@@ -18,7 +17,7 @@ class App extends Component {
       if(userAuth){
         const userRef = await createUserProfielDocument(userAuth);
 
-        this.unsubscribeFromSnapshot = userRef.onSnapshot(snapshot => {
+        userRef.onSnapshot(snapshot => {
           setCurrentUser({
               id: snapshot.id,
               ...snapshot.data()
@@ -36,7 +35,6 @@ class App extends Component {
 
   componentWillUnmount() {
     this.unsubscribeFromAuth();
-    this.unsubscribeFromSnapshot();
   }
 
 

@@ -4,7 +4,6 @@ import { CollectionItemContainer, CollectionItemFooterContainer, CollectionItemI
     CollectionItemButtonContainer } from './collection-item.styles';
 
 const CollectionItem = ({ item, addItem }) => {
-    console.log(item);
     const { name, price, imageUrl } = item
     return(
         <CollectionItemContainer>

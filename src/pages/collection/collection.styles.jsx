@@ -17,4 +17,5 @@ export const CollectionPageItemsContainer = styled.div`
 export const CollectionPageTitleContainer = styled.div`
     font-size: 38px;
     margin: 0 auto 30px;
+    text-transform:uppercase
 `
