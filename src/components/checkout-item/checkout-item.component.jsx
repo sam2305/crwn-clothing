@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addItem, clearItemFromCart, removeItem } from '../../redux';
+import { addItem, clearItemFromCart, removeItem } from '../../redux/cart/cart.actions';
 import { CheckoutItemContainer, CheckoutItemImageContainer, CheckoutItemImage,
 CheckoutItemTextContainer, CheckoutItemArrowContainer, CheckoutItemQuantityContainer,
 CheckoutItemQuantity, CheckoutItemRemoveButtonContainer } from './checkout-item.styles';

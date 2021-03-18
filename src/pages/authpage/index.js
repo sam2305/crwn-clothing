@@ -1,1 +1,0 @@
-export {default as SignInAndSignUpPage} from './authpage.component';

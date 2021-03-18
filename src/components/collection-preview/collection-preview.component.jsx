@@ -1,4 +1,4 @@
-import { CollectionItem } from '../collection-item';
+import CollectionItem from '../collection-item/collection-item.component';
 import { withRouter } from 'react-router-dom';
 
 import { CollectionPreviewContainer, CollectionPreviewItemContainer, CollectionPreviewTitleContainer } from './collection-preview.styles';

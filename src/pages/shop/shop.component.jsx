@@ -1,43 +1,26 @@
 import { ShopPageContainer } from './shop.styles';
-import { CollectionsOverview, WithSpinner } from '../../components';
+import CollectionsOverviewContainer from '../../components/collections-overview/collections-overview.container';
+import CollectionPageContainer from '../collection/collection.container';
 import { Switch, Route } from 'react-router';
-import { CollectionPage } from '../collection';
 import { Component } from 'react';
-import { firestore, convertCollectionsSnapshotToMap } from '../../firebase';
-import { updateCollections } from '../../redux';
+import { fetchCollectionsStart } from '../../redux/shop/shop.actions';
 import { connect } from 'react-redux';
 
-const CollectionsOverviewWithSpinner = WithSpinner(CollectionsOverview);
-const CollectionsPageWithSpinner = WithSpinner(CollectionPage);
 
 class ShopPage extends Component {
-    state = {
-        loading:true
-    }
-
-    unsubscribeFromSnapshot = null;
-
-    componentDidMount() {
-        const { dispatch } = this.props;
-        const collectionref = firestore.collection('collections');
-        this.unsubscribeFromSnapshot = collectionref.onSnapshot(async snapshot =>{
-            dispatch(updateCollections(convertCollectionsSnapshotToMap(snapshot)));
-            this.setState({ loading: false});
-        })
-    }
     
-    componentWillUnmount() {
-        this.unsubscribeFromSnapshot();
+    componentDidMount() {
+        const { fetchCollectionsStart } = this.props;
+        fetchCollectionsStart();
     }
 
     render() {
         const { match } = this.props;
-        const { loading } = this.state;
         return (
             <ShopPageContainer>
                 <Switch>
-                    <Route exact path={`${match.path}`} render={(props) => <CollectionsOverviewWithSpinner isLoading={loading} {...props} />}></Route>
-                    <Route exact path={`${match.path}/:collectionId`} render={(props) => <CollectionsPageWithSpinner isLoading={loading} {...props} />}></Route>
+                    <Route exact path={`${match.path}`} component={CollectionsOverviewContainer}></Route>
+                    <Route exact path={`${match.path}/:collectionId`} component={CollectionPageContainer}></Route>
                 </Switch>
                 
             </ShopPageContainer>
@@ -46,4 +29,7 @@ class ShopPage extends Component {
     }
 }
 
-export default connect(null)(WithSpinner(ShopPage));
+const mapDispatchToProps =  dispatch => ({
+    fetchCollectionsStart:() => dispatch(fetchCollectionsStart())
+}) 
+export default connect(null, mapDispatchToProps)(ShopPage);

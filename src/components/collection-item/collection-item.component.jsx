@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { addItem } from '../../redux';
+import { addItem } from '../../redux/cart/cart.actions';
 import { CollectionItemContainer, CollectionItemFooterContainer, CollectionItemImageContainer, CollectionItemNameContainer, CollectionItemPriceContainer,
     CollectionItemButtonContainer } from './collection-item.styles';
 

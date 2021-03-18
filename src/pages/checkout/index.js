@@ -1,1 +1,0 @@
-export { default as CheckoutPage} from './checkout.component';

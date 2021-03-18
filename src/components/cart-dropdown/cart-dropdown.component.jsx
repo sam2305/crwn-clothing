@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import { CartItem } from '../cart-item';
-import { selectCartItems, toggleCartHidden } from '../../redux';
+import CartItem from '../cart-item/cart-item.component';
+import { selectCartItems } from '../../redux/cart/cart.selectors';
+import { toggleCartHidden } from '../../redux/cart/cart.actions';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom'
 import { CartDropdownContainer, CartItemsContainer, EmptyMessageContainer ,CartDropdownButton } from './cart-dropdown.styles';

@@ -1,1 +1,0 @@
-export { default as WithSpinner } from './with-spinner.component';
